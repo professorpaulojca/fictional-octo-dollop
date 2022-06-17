@@ -1,6 +1,6 @@
 package io.github.professorpaulojca.clientes.rest;
 
-import io.github.professorpaulojca.clientes.exception.ApiErrors;
+import io.github.professorpaulojca.clientes.rest.exception.ApiErrors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

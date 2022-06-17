@@ -1,4 +1,4 @@
-package io.github.professorpaulojca.clientes.exception;
+package io.github.professorpaulojca.clientes.rest.exception;
 
 import lombok.Getter;
 

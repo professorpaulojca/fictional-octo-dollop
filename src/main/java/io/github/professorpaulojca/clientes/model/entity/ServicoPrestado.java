@@ -23,6 +23,7 @@ public class ServicoPrestado {
     private Cliente cliente;
 
     @Column
+    @JsonFormat(pattern = "#.##0,0#")
     private BigDecimal valor;
 
     @Column

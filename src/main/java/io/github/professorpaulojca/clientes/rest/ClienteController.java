@@ -16,15 +16,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin("*")
 public class ClienteController {
 
     private final ClienteRepository repository;
     private final ClienteBusiness business;
     private Mensagem msg;
 
-    @Autowired
-    public ClienteController(ClienteRepository repository, ClienteBusiness business){ //boa prática
+    public ClienteController(ClienteRepository repository, ClienteBusiness business){ //boa prática ai não precisa do @Autowired
         this.repository = repository;
         this.business = business;
     }

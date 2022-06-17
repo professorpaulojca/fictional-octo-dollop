@@ -12,14 +12,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/servicos-prestados")
+@RequestMapping("/api/servico-prestado")
 @RequiredArgsConstructor
+//não esquecer de configurar o CROSSORIGIN, neste projeto foi feito por filter
 public class ServicoPrestadoController {
 
     public final ClienteRepository clienteRepository;
@@ -29,7 +31,7 @@ public class ServicoPrestadoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ServicoPrestado salvar(@RequestBody @NotNull ServicoPrestadoDTO servicoPrestadoDTO){
+    public ServicoPrestado salvar(@RequestBody @NotNull @Valid ServicoPrestadoDTO servicoPrestadoDTO){
         LocalDate data = LocalDate.parse(servicoPrestadoDTO.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         Integer idCliente = servicoPrestadoDTO.getIdCliente();
 
